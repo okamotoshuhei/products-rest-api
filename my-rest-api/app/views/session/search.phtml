@@ -1,0 +1,47 @@
+<?php if($summaryContents){ ?>
+    <h3>日毎商品集計データ一覧</h3>
+    <table border="1">
+        <thead>
+            <th>集計日</th>
+            <th>登録商品数</th>
+            <th>削除商品数</th>
+            <th>商品ID</th>
+            <th>タイトル</th>
+            <th>説明</th>
+            <th>価格</th>
+            <th>イメージ</th>
+        </thead>
+        <?php foreach($summaryContents as $summaryDate => $contents){ ?>
+            <?php foreach($contents as $content){ ?>
+                <tbody>
+                    <tr>
+                        <td>
+                            <?php echo $summaryDate ?>
+                        </td>
+                        <td>
+                            <?php echo $content['create_cnt'] ?>
+                        </td>
+                        <td>
+                            <?php echo $content['delete_cnt'] ?>
+                        </td>
+                        <td>
+                            <?php echo $content['id'] ?>
+                        </td>
+                        <td>
+                            <?php echo $content['title'] ?>
+                        </td>
+                        <td>
+                            <?php echo $content['description'] ?>
+                        </td>
+                        <td>
+                            <?php echo $content['price'] ?>
+                        </td>
+                        <td>
+                            <img src="<?php echo $content['image'] ?>">
+                        </td>
+                    </tr>
+                </tbody>
+            <?php } ?>
+        <?php } ?>
+    </table>
+<?php } ?>

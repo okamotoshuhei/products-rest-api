@@ -1,0 +1,7 @@
+{
+    "require": {
+        "league/oauth2-client": "^2.3",
+        "league/oauth2-github": "^2.0",
+        "sidroberts/phalcon-cron": "dev-master"
+    }
+}

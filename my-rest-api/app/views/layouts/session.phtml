@@ -1,0 +1,16 @@
+<?php if($userInfo){ ?>
+<h3>ログインユーザー情報</h2>
+<p>ユーザー名：<?php echo $userInfo['login'] ?></p>
+<p>アカウントURL：<?php echo $userInfo['html_url'] ?></p>
+<p>作成日：<?php echo $userInfo['created_at'] ?></p>
+<p>最終更新日：<?php echo $userInfo['updated_at'] ?></p>
+<p>RESTAPI認証用トークン：<?php echo $apiToken ?></p>
+<a href="/logout">ログアウト</a>
+<form method='post' action='/login/user/search'>
+    <p>
+        <?php echo $form->render('summaryDate'); ?>
+        <input type='submit' value='Search' />
+    </p>
+</form>
+<?php } ?>
+<?php echo $this->getContent(); ?>
